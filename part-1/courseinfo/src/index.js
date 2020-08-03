@@ -16,26 +16,26 @@ const App = () => {
       <Content part={part1} exercises={exercises1} />
       <Content part={part2} exercises={exercises2} />
       <Content part={part3} exercises={exercises3} />
-      <Total part1={part1} part2={part2} part3={part3} />
+      <Total exs1={exercises1} exs2={exercises2} exs3={exercises3} />
     </div>
   )
 }
 
-const Header = (course) => {
+const Header = (props) => {
   return (
-      <h1>{course}</h1>
+      <h1>{props.course}</h1>
   )
 }
 
-const Content = (part, exercises) => {
+const Content = (props) => {
   return (
-      <p>{part} {exercises} </p>
+      <p>{props.part} {props.exercises} </p>
   )
 }
 
-const Total = (exercises1, exercises2, exercises3) => {
+const Total = (props) => {
   return (
-      <p>Number of exercises {exercises1 + exercises2 + exercises3}</p>
+      <p>Number of exercises {props.exs1 + props.exs2 + props.exs3}</p>
   )
 }
 
